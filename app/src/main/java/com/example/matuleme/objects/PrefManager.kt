@@ -3,7 +3,7 @@ package com.example.matuleme.objects
 import android.content.Context
 import android.content.SharedPreferences
 
-class PrefManager {
+object PrefManager {
     private lateinit var actSystem: SharedPreferences
 
     fun init(context: Context){
