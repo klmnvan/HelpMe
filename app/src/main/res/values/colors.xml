@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#2B2B2B</color>
+    <color name="white">#F7F7F9</color>
+    <color name="blue">#48B2E7</color>
+    <color name="gray1">#707B81</color>
+    <color name="gray2">#6A6A6A</color>
+    <color name="onBoardLine">#2B6B8B</color>
+</resources>
