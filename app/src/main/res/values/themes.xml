@@ -1,13 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MatuleMe" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.MatuleMe" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/blue</item>
         <item name="colorSurface">@color/gray2</item>
         <item name="colorOnPrimary">@color/black</item>
         <item name="colorOnSurface">@color/gray1</item>
     </style>
 
-    <style name="TittleOB" parent="Base.Theme.MatuleMe" >
+    <style name="TittleOB" parent="Theme.MatuleMe" >
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textSize">30sp</item>
@@ -16,12 +16,32 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="DescriptionOB" parent="Base.Theme.MatuleMe" >
+    <style name="DescriptionOB" parent="Theme.MatuleMe" >
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">#D8D8D8</item>
+    </style>
+
+    <style name="BtnWhite" parent="Theme.MatuleMe" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:paddingVertical">17dp</item>
+        <item name="android:background">@drawable/shape_white_10rad</item>
+    </style>
+
+    <style name="BtnBlue" parent="Theme.MatuleMe" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingVertical">17dp</item>
+        <item name="android:background">@drawable/shape_blue_10rad</item>
     </style>
 
 </resources>

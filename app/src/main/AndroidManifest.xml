@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MatuleMe"
         tools:targetApi="31">
         <activity
+            android:name=".screens.Home"
+            android:exported="false" />
+        <activity
             android:name=".screens.SignIn"
             android:exported="false" />
         <activity
@@ -20,9 +23,6 @@
             android:exported="false" />
         <activity
             android:name=".screens.Splash"
-            android:exported="false" />
-        <activity
-            android:name=".customActivity.CustomActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

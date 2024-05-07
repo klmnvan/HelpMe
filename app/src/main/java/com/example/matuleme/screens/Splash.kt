@@ -37,7 +37,6 @@ class Splash : CustomActivity() {
             }
         }
         thread.start()
-
     }
 
 }
