@@ -72,17 +72,14 @@
 
     </LinearLayout>
 
-    <TextView
+    <ImageView
         android:id="@+id/btnAddShop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/romb_plus"
-        android:text="+"
-        android:textSize="20dp"
-        android:paddingVertical="5dp"
-        android:paddingHorizontal="10dp"
-        android:textColor="#FFFFFF"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/btn_add_basket"/>
 
 </RelativeLayout>

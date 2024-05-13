@@ -16,11 +16,10 @@ open class CustomActivity : AppCompatActivity() {
     }
 
     private fun getCross() {
-        UserData.listCross.add(ShopModelTest(true, "Тестовый заголовок 1",
-            500))
-        UserData.listCross.add(ShopModelTest(false, "Тестовый 2", 600))
-        UserData.listCross.add(ShopModelTest(true, "заголовок 3", 700))
-        UserData.listCross.add(ShopModelTest(true, "заголовок 4", 800))
+        UserData.listCross.add(ShopModelTest(true, "Тестовый заголовок 1", "Какое-то описание",500))
+        UserData.listCross.add(ShopModelTest(false, "Тестовый 2",  "Какое-то описание",600))
+        UserData.listCross.add(ShopModelTest(true, "заголовок 3",  "Какое-то описание",700))
+        UserData.listCross.add(ShopModelTest(true, "заголовок 4",  "Какое-то описание",800))
     }
 
 }

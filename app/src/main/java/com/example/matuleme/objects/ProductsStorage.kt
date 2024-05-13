@@ -9,4 +9,10 @@ object ProductsStorage {
     var listProductBasket: MutableList<ShopModelTest> = ArrayList()
     var currentProduct: ShopModelTest = ShopModelTest()
 
+    val Price: Int
+        get() =  listProductBasket.map { it.price!! }.sum()
+
+    val countProductInB: Int
+        get() = listProductBasket.distinct().size
+
 }

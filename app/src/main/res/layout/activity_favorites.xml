@@ -37,7 +37,6 @@
             tools:ignore="HardcodedText" />
 
         <ImageView
-            android:id="@+id/btnOpenFav"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/btn_heart"/>
@@ -103,16 +102,20 @@
                 android:weightSum="2">
 
                 <ImageView
+                    android:id="@+id/btnOpenHome"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:src="@drawable/icon_home"/>
+                    android:src="@drawable/icon_home"
+                    app:tint="@color/gray2" />
 
                 <ImageView
+                    android:id="@+id/btnOpenFav"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:src="@drawable/icon_heart"/>
+                    android:src="@drawable/icon_heart"
+                    app:tint="@color/blue"/>
 
             </LinearLayout>
 
@@ -133,12 +136,14 @@
                 android:weightSum="2">
 
                 <ImageView
+                    android:id="@+id/btnOpenNot"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/icon_notif"/>
 
                 <ImageView
+                    android:id="@+id/btnOpenProfile"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_weight="1"

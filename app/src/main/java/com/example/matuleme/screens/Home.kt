@@ -1,25 +1,18 @@
 package com.example.matuleme.screens
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Canvas
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.RecyclerView
-import com.example.matuleme.R
-import com.example.matuleme.adapters.AdapterShop
+import com.example.matuleme.adapters.AdapterProduct
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityHomeBinding
 import com.example.matuleme.models.ShopModelTest
 import com.example.matuleme.objects.UserData
-import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 
-class Home : CustomActivity(), AdapterShop.Listener{
+class Home : CustomActivity(), AdapterProduct.Listener{
     private lateinit var binding: ActivityHomeBinding
-    private val adapterShop = AdapterShop(this)
+    private val adapterProduct = AdapterProduct(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,11 +55,13 @@ class Home : CustomActivity(), AdapterShop.Listener{
 
     private fun initProduct() {
         with(binding) {
-            listViewProduct.adapter = adapterShop
+            listViewProduct.adapter = adapterProduct
             listViewProduct.layoutManager = GridLayoutManager(this@Home, 2)
-            adapterShop.clear()
-            UserData.listCross.forEach {
-                adapterShop.addElement(it)
+            adapterProduct.clear()
+            UserData.listCross.forEachIndexed() { i, el ->
+                if(i < 2){
+                    adapterProduct.addElement(el)
+                }
             }
         }
     }
@@ -74,7 +69,28 @@ class Home : CustomActivity(), AdapterShop.Listener{
     private fun pressBtns() {
         with(binding){
             btnOpenShop.setOnClickListener {
-                startActivity(Intent(this@Home, Shop::class.java))
+                startActivity(Intent(this@Home, Basket::class.java))
+                finish()
+            }
+            btnShop.setOnClickListener {
+                startActivity(Intent(this@Home, Basket::class.java))
+                finish()
+            }
+            btnOpenFav.setOnClickListener {
+                startActivity(Intent(this@Home, Favorites::class.java))
+                finish()
+            }
+            btnOpenNot.setOnClickListener {
+
+            }
+            btnOpenProfile.setOnClickListener {
+
+            }
+            btnOpenSideMenu.setOnClickListener {
+
+            }
+            btnOpenFullAction.setOnClickListener {
+                startActivity(Intent(this@Home, Popular::class.java))
                 finish()
             }
         }
