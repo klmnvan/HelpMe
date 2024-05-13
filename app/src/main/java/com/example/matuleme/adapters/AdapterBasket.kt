@@ -41,7 +41,6 @@ class AdapterBasket<T : Any>(private val listener: T): RecyclerView.Adapter<Adap
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-
         holder.bind(listProduct[position], listener as Listener, ProductsStorage.listProductBasket.count { it == listProduct[position] })
     }
 

@@ -60,16 +60,17 @@
                 tools:ignore="HardcodedText" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="20dp"
+                android:id="@+id/listViewCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/item_button_category"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_button_category" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="20dp"
                 android:id="@+id/listViewProduct"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"

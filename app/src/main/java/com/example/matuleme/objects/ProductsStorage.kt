@@ -8,6 +8,7 @@ object ProductsStorage {
     var listProductPopular: MutableList<ShopModelTest> = ArrayList()
     var listProductBasket: MutableList<ShopModelTest> = ArrayList()
     var currentProduct: ShopModelTest = ShopModelTest()
+    var currenCategory: String = "Все"
 
     val Price: Int
         get() =  listProductBasket.map { it.price!! }.sum()
@@ -15,4 +16,6 @@ object ProductsStorage {
     val countProductInB: Int
         get() = listProductBasket.distinct().size
 
+    val allCategories: List<String>
+        get() = mutableListOf("Все") + listProduct.map { it.category }.distinct()
 }
