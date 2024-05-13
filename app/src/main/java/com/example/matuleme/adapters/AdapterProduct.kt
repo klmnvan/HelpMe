@@ -1,6 +1,7 @@
 package com.example.matuleme.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.matuleme.R
 import com.example.matuleme.databinding.ItemProductBaseBinding
 import com.example.matuleme.models.ShopModelTest
+import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
 import com.example.matuleme.objects.ProductsStorage.listProductBasket
 import com.example.matuleme.objects.ProductsStorage.listProductFav
@@ -32,6 +34,7 @@ class AdapterProduct<T : Any>(private val listener: T): RecyclerView.Adapter<Ada
                         listProductFav.add(el)
                     }
                     list.updateListProduct()
+                    PrefManager.listProductFav = listProductFav
                 }
                 btnAddShop.setOnClickListener {
                     if (listProductBasket.contains(el)) {
@@ -40,11 +43,13 @@ class AdapterProduct<T : Any>(private val listener: T): RecyclerView.Adapter<Ada
                         listProductBasket.add(el)
                     }
                     list.updateListProduct()
+                    PrefManager.listProductFav = listProductFav
                 }
                 mainCont.setOnClickListener {
                     ProductsStorage.currentProduct = el
                     list.openCardProduct(el)
                     list.updateListProduct()
+                    PrefManager.listProductFav = listProductFav
                 }
             }
         }

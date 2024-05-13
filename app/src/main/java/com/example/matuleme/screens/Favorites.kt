@@ -13,6 +13,7 @@ import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityCategoriesBinding
 import com.example.matuleme.databinding.ActivityFavoritesBinding
 import com.example.matuleme.models.ShopModelTest
+import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
 import com.example.matuleme.objects.UserData
 
@@ -53,7 +54,7 @@ class Favorites : CustomActivity(), AdapterProduct.Listener {
 
             }
             btnOpenProfile.setOnClickListener {
-
+                btnShop
             }
             btnOpenSideMenu.setOnClickListener {
                 startActivity(Intent(this@Favorites, Home::class.java))

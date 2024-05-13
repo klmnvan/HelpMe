@@ -59,8 +59,6 @@ class AdapterBasket<T : Any>(private val listener: T): RecyclerView.Adapter<Adap
     }
 
     interface Listener {
-
         fun updateListProduct()
-
     }
 }

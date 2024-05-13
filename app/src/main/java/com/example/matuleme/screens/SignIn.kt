@@ -14,6 +14,7 @@ import com.example.matuleme.databinding.ActivityOnBoardBinding
 import com.example.matuleme.databinding.ActivitySignInBinding
 import com.example.matuleme.fragments.FragmentCheckEmail
 import com.example.matuleme.objects.General.isEmailValid
+import com.example.matuleme.objects.PrefManager
 
 class SignIn : CustomActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -34,6 +35,7 @@ class SignIn : CustomActivity() {
                 } else {
                     val dialog = FragmentCheckEmail()
                     dialog.show(supportFragmentManager, "kldjsfhsdkl")
+                    PrefManager.act = 2
                     /*startActivity(Intent(this@SignIn, Home::class.java))
                     finish()*/
                 }

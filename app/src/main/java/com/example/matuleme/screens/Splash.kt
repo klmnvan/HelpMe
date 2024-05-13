@@ -9,7 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.matuleme.R
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivitySplashBinding
+import com.example.matuleme.models.ShopModelTest
 import com.example.matuleme.objects.PrefManager
+import com.example.matuleme.objects.ProductsStorage
 import java.util.concurrent.TimeUnit
 
 class Splash : CustomActivity() {
@@ -23,12 +25,16 @@ class Splash : CustomActivity() {
             override fun run() {
                 try {
                     TimeUnit.SECONDS.sleep(2)
-                    if(PrefManager.act == 0){
+                    if(PrefManager.act == 0) {
                         startActivity(Intent(this@Splash, OnBoard::class.java))
                         finish()
                     }
-                    if(PrefManager.act == 1){
+                    if(PrefManager.act == 1) {
                         startActivity(Intent(this@Splash, SignIn::class.java))
+                        finish()
+                    }
+                    if(PrefManager.act == 2) {
+                        startActivity(Intent(this@Splash, Home::class.java))
                         finish()
                     }
                 } catch (e: InterruptedException) {
@@ -37,6 +43,18 @@ class Splash : CustomActivity() {
             }
         }
         thread.start()
+        initStorage()
+    }
+
+    private fun initStorage() {
+        with(ProductsStorage){
+            listProduct.add(ShopModelTest(true, "Тестовый заголовок 1", "Какое-то описание",500, "Tennis"))
+            listProduct.add(ShopModelTest(false, "Тестовый 2",  "Какое-то описание",600, "Tennis"))
+            listProduct.add(ShopModelTest(true, "заголоsdfвок 3",  "Какое-то опsdfgисание",700, "Outdoor"))
+            listProduct.add(ShopModelTest(true, "заголsdfовок 4",  "Какsdfое-sdfто описание",800, "Tennis"))
+            listProductFav = PrefManager.listProductFav
+        }
+
     }
 
 }

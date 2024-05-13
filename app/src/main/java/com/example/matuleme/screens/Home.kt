@@ -9,6 +9,7 @@ import com.example.matuleme.adapters.AdapterProduct
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityHomeBinding
 import com.example.matuleme.models.ShopModelTest
+import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
 import com.example.matuleme.objects.UserData
 
@@ -44,7 +45,7 @@ class Home : CustomActivity(), AdapterProduct.Listener, AdapterCategory.Listener
             listViewProduct.layoutManager = GridLayoutManager(this@Home, 2)
             adapterProduct.clear()
             ProductsStorage.listProduct.forEachIndexed() { i, el ->
-                if(i < 2){
+                if(i < 2) {
                     adapterProduct.addElement(el)
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.matuleme.objects
 
 import com.example.matuleme.models.ShopModelTest
+import io.paperdb.Paper
 
 object ProductsStorage {
     var listProduct: MutableList<ShopModelTest> = ArrayList()
@@ -18,4 +19,10 @@ object ProductsStorage {
 
     val allCategories: List<String>
         get() = mutableListOf("Все") + listProduct.map { it.category }.distinct()
+
+    /*var listProductFav: MutableList<ShopModelTest>
+        get() = Paper.book().read("fff", ArrayList())!!
+        set(value) {
+            Paper.book().read("fff", value)
+        }*/
 }

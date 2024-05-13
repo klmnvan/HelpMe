@@ -38,7 +38,7 @@
             android:name=".screens.Shop"
             android:exported="false" />
         <activity
-            android:name=".screens.Splash"
+            android:name=".screens.Home"
             android:exported="false" />
         <activity
             android:name=".screens.SignIn"
@@ -47,7 +47,7 @@
             android:name=".screens.OnBoard"
             android:exported="false" />
         <activity
-            android:name=".screens.Home"
+            android:name=".screens.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
