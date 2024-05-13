@@ -51,4 +51,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }

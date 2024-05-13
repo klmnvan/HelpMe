@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.Home"
+    android:background="#F7F7F9">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@id/RlInfo">
+
+        <!--Главный LL-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Главная-->
+            <LinearLayout
+                android:id="@+id/LLTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/btnOpenSideMenu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:src="@drawable/btn_back"/>
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Корзина"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtCountAllProduct"
+                style="@style/DescriptionDGray"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="3 товара"
+                android:textSize="16sp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listViewProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_product_in_basket" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:text="Сумма"/>
+
+                <TextView
+                    android:id="@+id/txtSumValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:text="Доставка"/>
+
+                <TextView
+                    android:id="@+id/txtDeliveryValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp"
+                android:src="@drawable/custom_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:text="Итого"/>
+
+                <TextView
+                    android:id="@+id/txtTotalValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/blue"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnPay"
+                style="@style/BtnBlue"
+                android:layout_below="@+id/btnReset"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:text="Оформить заказ"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

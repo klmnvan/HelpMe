@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,9 +14,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MatuleMe"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".screens.Home"
+            android:name=".screens.MyCart"
+            android:exported="false" />
+        <activity
+            android:name=".screens.CardProduct"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Basket"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Categories"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Favorites"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Popular"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Shop"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Splash"
             android:exported="false" />
         <activity
             android:name=".screens.SignIn"
@@ -22,7 +47,7 @@
             android:name=".screens.OnBoard"
             android:exported="false" />
         <activity
-            android:name=".screens.Splash"
+            android:name=".screens.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

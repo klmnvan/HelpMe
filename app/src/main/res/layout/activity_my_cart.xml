@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.Home"
+    android:background="#F7F7F9">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_above="@id/RlInfo">
+
+        <!--Главный LL-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Главная-->
+            <LinearLayout
+                android:id="@+id/LLTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:src="@drawable/btn_back"/>
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My Cart"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/shape_white_def_10rad">
+
+                <TextView
+                    style="@style/DescriptionDGray"
+                    android:textColor="@color/black"
+                    android:text="Контактная информация"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    android:layout_marginBottom="10dp"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_email"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:id="@+id/txtEmail"
+                            style="@style/TittleBlack"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:textAlignment="textStart"
+                            android:text="emmanueloyiboke@gmail.com"/>
+
+                        <TextView
+                            style="@style/TittleBlack"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14dp"
+                            android:textStyle="normal"
+                            android:textAlignment="textStart"
+                            android:text="Email"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnUpdateEmail"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_update"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_phone"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            android:id="@+id/txtPhone"
+                            style="@style/TittleBlack"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:textAlignment="textStart"
+                            android:text="+234-811-732-5298"/>
+
+                        <TextView
+                            style="@style/TittleBlack"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14dp"
+                            android:textStyle="normal"
+                            android:textAlignment="textStart"
+                            android:text="Телефон"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnUpdatePhone"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_update"/>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/DescriptionDGray"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:text="Адрес"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtAddress"
+                        style="@style/GrayTextNormal"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:text="1082 Аэропорт, Нигерии"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_arrow_bottom"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_map"/>
+
+                <TextView
+                    style="@style/DescriptionDGray"
+                    android:textColor="@color/black"
+                    android:text="Способ оплаты"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_card"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="10dp">
+
+                        <TextView
+                            style="@style/TittleBlack"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:textAlignment="textStart"
+                            android:text="DbL Card"/>
+
+                        <TextView
+                            android:id="@+id/txtCard"
+                            style="@style/TittleBlack"
+                            android:layout_marginTop="5dp"
+                            android:textSize="14dp"
+                            android:textStyle="normal"
+                            android:textAlignment="textStart"
+                            android:text="**** **** 0696 4629"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnUpdateCard"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/icon_arrow_bottom"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:text="Сумма"/>
+
+                <TextView
+                    android:id="@+id/txtSumValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:text="Доставка"/>
+
+                <TextView
+                    android:id="@+id/txtDeliveryValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp"
+                android:src="@drawable/custom_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/black"
+                    android:text="Итого"/>
+
+                <TextView
+                    android:id="@+id/txtTotalValue"
+                    style="@style/GrayTextNormal"
+                    android:textColor="@color/blue"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:text="₽60.20"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnPay"
+                style="@style/BtnBlue"
+                android:layout_below="@+id/btnReset"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:text="Подтвердить" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

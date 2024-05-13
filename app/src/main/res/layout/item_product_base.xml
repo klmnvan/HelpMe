@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainCont"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_white_def_10rad"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="15dp">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_cross"/>
+
+    <ImageView
+        android:id="@+id/btnAddFavorites"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/icon_heart_black"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/img">
+
+        <TextView
+            style="@style/TittleBlack"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimary"
+            android:text="BEST SELLER"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tTittle"
+            style="@style/TittleBlack"
+            android:textSize="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorSurface"
+            android:textAlignment="textStart"
+            android:layout_marginTop="10dp"
+            android:text="Nike Jordan"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tPrice"
+            style="@style/TittleBlack"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:layout_marginBottom="10dp"
+            android:textColor="?attr/colorOnPrimary"
+            android:text="₽302.00"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnAddShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/romb_plus"
+        android:text="+"
+        android:textSize="20dp"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

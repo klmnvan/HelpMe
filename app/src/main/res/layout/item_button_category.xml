@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/shape_white_def_10rad"
+    android:layout_marginEnd="10dp">
+
+    <TextView
+        android:id="@+id/tTittle"
+        style="@style/DescriptionDGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnPrimary"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="20dp"
+        android:text="Категория"
+        android:visibility="visible"/>
+
+</LinearLayout>

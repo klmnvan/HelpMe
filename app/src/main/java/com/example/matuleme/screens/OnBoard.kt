@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.matuleme.R
+import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityOnBoardBinding
 import com.example.matuleme.databinding.ActivitySplashBinding
 import com.example.matuleme.models.OnBoardModel
@@ -16,7 +17,7 @@ import com.example.matuleme.objects.PrefManager
 import java.util.LinkedList
 import java.util.Queue
 
-class OnBoard : AppCompatActivity() {
+class OnBoard : CustomActivity() {
     private lateinit var binding: ActivityOnBoardBinding
     private var queue: Queue<OnBoardModel> = LinkedList()
 

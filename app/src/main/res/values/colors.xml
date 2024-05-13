@@ -6,4 +6,5 @@
     <color name="gray1">#707B81</color>
     <color name="gray2">#6A6A6A</color>
     <color name="onBoardLine">#2B6B8B</color>
+    <color name="red">#FF0000</color>
 </resources>

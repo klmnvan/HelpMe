@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:gravity="center"
+    android:layout_marginHorizontal="40dp"
+    android:background="@drawable/shape_white_def_10rad">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="40dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_congratulations"/>
+
+    <TextView
+        style="@style/TittleBlack"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        android:textAlignment="center"
+        android:text="Вы успешно оформили заказ"/>
+
+    <TextView
+        android:id="@+id/btnOK"
+        style="@style/BtnBlue"
+        android:layout_marginTop="20dp"
+        android:text="Подтвердить" />
+
+</LinearLayout>

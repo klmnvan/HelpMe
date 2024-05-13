@@ -5,11 +5,246 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.Home">
+    tools:context=".screens.Home"
+    android:background="#F7F7F9">
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentBottom="true">
+
+        <!--Главный LL-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Главная-->
+            <LinearLayout
+                android:id="@+id/LLTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/btnOpenSideMenu"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/btn_side_menu"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/home_tittle"/>
+
+                <ImageView
+                    android:id="@+id/btnOpenShop"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/btn_open_shop"/>
+
+            </LinearLayout>
+
+            <!--Поиск-->
+            <LinearLayout
+                android:id="@+id/LLSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/shape_white_def_10rad">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/icon_search"/>
+
+                    <EditText
+                        android:id="@+id/inptSearch"
+                        style="@style/EditTextAuth"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginHorizontal="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:hint="Поиск"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/btnOpenSettings"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btn_settings"/>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TittleBlack"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="Категории"
+                android:textSize="16dp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_button_category"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Популярное"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/btnOpenFullPopular"
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Все"
+                    android:textSize="16dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="normal"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listViewProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                app:spanCount="2"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_product_base"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Акции"
+                    android:layout_weight="1"
+                    android:textAlignment="textStart"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/btnOpenFullAction"
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Все"
+                    android:textSize="16dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="normal"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:background="@drawable/img_home2"
+                android:layout_marginBottom="120dp">
+
+                <TextView
+                    android:id="@+id/tAct1"
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="Summer Sale"
+                    android:textStyle="normal"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/tAct1"
+                    android:layout_marginStart="15dp"
+                    android:text="15% OFF"
+                    android:textStyle="bold"
+                    android:textColor="#674DC5"
+                    android:textSize="30dp"
+                    android:visibility="visible"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/img_home1"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--Меню-->
+    <RelativeLayout
+        android:id="@+id/RLBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_alignParentBottom="true">
 
         <ImageView
@@ -34,14 +269,14 @@
                 android:weightSum="2">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/icon_home"/>
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/icon_heart"/>
 
@@ -64,14 +299,14 @@
                 android:weightSum="2">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/icon_notif"/>
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_weight="1"
                     android:src="@drawable/icon_person"/>
 
@@ -81,12 +316,13 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/btnShop"
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="70dp"
+            android:layout_marginBottom="60dp"
             android:src="@drawable/icon_shop"/>
 
     </RelativeLayout>
