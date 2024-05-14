@@ -2,20 +2,12 @@ package com.example.matuleme.screens
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.matuleme.R
 import com.example.matuleme.adapters.AdapterProduct
 import com.example.matuleme.customActivity.CustomActivity
-import com.example.matuleme.databinding.ActivityCategoriesBinding
 import com.example.matuleme.databinding.ActivityFavoritesBinding
 import com.example.matuleme.models.ShopModelTest
-import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
-import com.example.matuleme.objects.UserData
 
 class Favorites : CustomActivity(), AdapterProduct.Listener {
     private lateinit var binding: ActivityFavoritesBinding

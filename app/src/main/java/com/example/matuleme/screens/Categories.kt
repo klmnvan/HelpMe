@@ -2,20 +2,13 @@ package com.example.matuleme.screens
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.matuleme.R
 import com.example.matuleme.adapters.AdapterCategory
 import com.example.matuleme.adapters.AdapterProduct
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityCategoriesBinding
 import com.example.matuleme.models.ShopModelTest
 import com.example.matuleme.objects.ProductsStorage
-import com.example.matuleme.objects.UserData
 
 class Categories : CustomActivity(), AdapterProduct.Listener, AdapterCategory.Listener {
     private lateinit var binding: ActivityCategoriesBinding

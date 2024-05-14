@@ -3,15 +3,12 @@ package com.example.matuleme.screens
 import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.matuleme.adapters.AdapterCategory
 import com.example.matuleme.adapters.AdapterProduct
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivityHomeBinding
 import com.example.matuleme.models.ShopModelTest
-import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
-import com.example.matuleme.objects.UserData
 
 
 class Home : CustomActivity(), AdapterProduct.Listener, AdapterCategory.Listener {
@@ -70,7 +67,8 @@ class Home : CustomActivity(), AdapterProduct.Listener, AdapterCategory.Listener
 
             }
             btnOpenProfile.setOnClickListener {
-
+                startActivity(Intent(this@Home, Profile::class.java))
+                finish()
             }
             btnOpenSideMenu.setOnClickListener {
                 startActivity(Intent(this@Home, SideMenu::class.java))
