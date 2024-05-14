@@ -48,7 +48,7 @@ class Splash : CustomActivity() {
 
     private fun initStorage() {
         with(ProductsStorage){
-            listProduct.add(ShopModelTest(true, "Тестовый заголовок 1", "Какое-то описание",500, "Tennis"))
+            listProduct.add(ShopModelTest(true, "Тестовый заголовок 1", "Какое-то описание", 500, "Tennis"))
             listProduct.add(ShopModelTest(false, "Тестовый 2",  "Какое-то описание",600, "Tennis"))
             listProduct.add(ShopModelTest(true, "заголоsdfвок 3",  "Какое-то опsdfgисание",700, "Outdoor"))
             listProduct.add(ShopModelTest(true, "заголsdfовок 4",  "Какsdfое-sdfто описание",800, "Tennis"))

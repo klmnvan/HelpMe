@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.SideMenu"
+    android:background="?attr/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="600dp"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/img_side_menu"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:layout_marginStart="30dp">
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_marginTop="60dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_user"/>
+
+            <TextView
+                android:id="@+id/txtName"
+                style="@style/DescriptionDGray"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:text="Эмануэль Кверти"
+                android:textSize="20dp"
+                android:visibility="visible"
+                android:layout_marginBottom="50dp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:id="@+id/btnProfile"
+                style="@style/SideMenuLLStyle"
+                android:layout_marginBottom="7dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_person"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Профиль"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnBasket"
+                style="@style/SideMenuLLStyle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_shop_white"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Корзина"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnFav"
+                style="@style/SideMenuLLStyle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_heart"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Избранное"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnOrders"
+                style="@style/SideMenuLLStyle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_order"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Заказы"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNot"
+                style="@style/SideMenuLLStyle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_notif2" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Уведомления"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnSettings"
+                style="@style/SideMenuLLStyle">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_settings"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Настройки"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:id="@+id/btnLogOut"
+                style="@style/SideMenuLLStyle"
+                android:layout_marginVertical="20dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_logout"
+                    app:tint="@color/white" />
+
+                <TextView
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:text="Выйти"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+  </androidx.core.widget.NestedScrollView
+   >

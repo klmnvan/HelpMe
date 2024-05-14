@@ -73,7 +73,8 @@ class Home : CustomActivity(), AdapterProduct.Listener, AdapterCategory.Listener
 
             }
             btnOpenSideMenu.setOnClickListener {
-
+                startActivity(Intent(this@Home, SideMenu::class.java))
+                finish()
             }
             btnOpenFullAction.setOnClickListener {
                 startActivity(Intent(this@Home, Popular::class.java))
