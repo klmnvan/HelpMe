@@ -34,7 +34,7 @@ class AdapterProduct<T : Any>(private val listener: T): RecyclerView.Adapter<Ada
                         listProductFav.add(el)
                     }
                     list.updateListProduct()
-                    PrefManager.listProductFav = listProductFav
+                    PrefManager.updateListProductFav()
                 }
                 btnAddShop.setOnClickListener {
                     if (listProductBasket.contains(el)) {
@@ -43,13 +43,13 @@ class AdapterProduct<T : Any>(private val listener: T): RecyclerView.Adapter<Ada
                         listProductBasket.add(el)
                     }
                     list.updateListProduct()
-                    PrefManager.listProductFav = listProductFav
+                    PrefManager.updateListProductFav()
                 }
                 mainCont.setOnClickListener {
                     ProductsStorage.currentProduct = el
                     list.openCardProduct(el)
                     list.updateListProduct()
-                    PrefManager.listProductFav = listProductFav
+                    PrefManager.updateListProductFav()
                 }
             }
         }

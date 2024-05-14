@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.matuleme.R
 import com.example.matuleme.customActivity.CustomActivity
 import com.example.matuleme.databinding.ActivitySplashBinding
+import com.example.matuleme.models.OrderModel
 import com.example.matuleme.models.ShopModelTest
 import com.example.matuleme.objects.PrefManager
 import com.example.matuleme.objects.ProductsStorage
@@ -53,6 +54,12 @@ class Splash : CustomActivity() {
             listProduct.add(ShopModelTest(true, "заголоsdfвок 3",  "Какое-то опsdfgисание",700, "Outdoor"))
             listProduct.add(ShopModelTest(true, "заголsdfовок 4",  "Какsdfое-sdfто описание",800, "Tennis"))
             listProductFav = PrefManager.listProductFav
+
+            listOrders.add(OrderModel("1", "Name 1", 123213, 123123, "Даты не будет ;(") )
+            listOrders.add(OrderModel("2", "Name 2", 123213, 123123, "Даты не будет ;(") )
+            listOrders.add(OrderModel("3", "Name 3", 123213, 123123, "Даты не будет ;(") )
+            listOrders.add(OrderModel("4", "Name 4", 123213, 123123, "Даты не будет ;(") )
+            listOrders.add(OrderModel("5", "Name 5", 123213, 123123, "Даты не будет ;(") )
         }
 
     }

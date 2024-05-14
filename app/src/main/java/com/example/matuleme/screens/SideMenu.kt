@@ -40,8 +40,8 @@ class SideMenu : CustomActivity() {
                 finish()
             }
             btnOrders.setOnClickListener {
-                /*startActivity(Intent(this@SideMenu, Home::class.java))
-                finish()*/
+                startActivity(Intent(this@SideMenu, Orders::class.java))
+                finish()
             }
             btnNot.setOnClickListener {
                 /*startActivity(Intent(this@SideMenu, Home::class.java))

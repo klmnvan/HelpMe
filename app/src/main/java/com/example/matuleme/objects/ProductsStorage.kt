@@ -1,5 +1,6 @@
 package com.example.matuleme.objects
 
+import com.example.matuleme.models.OrderModel
 import com.example.matuleme.models.ShopModelTest
 import io.paperdb.Paper
 
@@ -9,7 +10,9 @@ object ProductsStorage {
     var listProductPopular: MutableList<ShopModelTest> = ArrayList()
     var listProductBasket: MutableList<ShopModelTest> = ArrayList()
     var currentProduct: ShopModelTest = ShopModelTest()
+    var currentOrder: OrderModel = OrderModel()
     var currenCategory: String = "Все"
+    var listOrders: MutableList<OrderModel> = ArrayList()
 
     val Price: Int
         get() =  listProductBasket.map { it.price!! }.sum()

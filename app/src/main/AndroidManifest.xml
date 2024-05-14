@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".screens.Orders"
+            android:exported="false" />
+        <activity
             android:name=".screens.ProfileRedact"
             android:exported="false" />
         <activity

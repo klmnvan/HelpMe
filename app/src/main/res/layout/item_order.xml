@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainCont"
+    android:gravity="center_vertical"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_white_def_10rad">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/white"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_cross"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtIdOrder"
+                    style="@style/TittleBlack"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:layout_weight="1"
+                    android:textColor="@color/blue"
+                    android:textAlignment="textStart"
+                    android:text="№ 325556516"/>
+
+                <TextView
+                    android:id="@+id/txtData"
+                    style="@style/TittleBlack"
+                    android:layout_width="wrap_content"
+                    android:textSize="12dp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:text="7 мин назад"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTittle"
+                style="@style/TittleBlack"
+                android:layout_marginTop="8dp"
+                android:textSize="16dp"
+                android:textStyle="normal"
+                android:textAlignment="textStart"
+                android:text="Nike Club Max"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPrice1"
+                    style="@style/TittleBlack"
+                    android:textSize="16dp"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:textStyle="bold"
+                    android:text="₽584.95"/>
+
+                <TextView
+                    android:id="@+id/txtPrice2"
+                    style="@style/TittleBlack"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"
+                    android:text="₽584.95"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

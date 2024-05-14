@@ -14,6 +14,10 @@ object PrefManager {
         Paper.init(context)
     }
 
+    fun updateListProductFav() {
+        listProductFav = ProductsStorage.listProductFav
+    }
+
     var act: Int
         get() = actSystem.getInt("act", 0)
         set(value) = actSystem.edit().putInt("act", value).apply()
@@ -23,6 +27,5 @@ object PrefManager {
         set(value) {
             Paper.book().write("favProduct", value)
         }
-
 
 }
