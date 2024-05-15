@@ -1,24 +1,20 @@
 package com.example.matuleme.screens
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.matuleme.R
-import com.example.matuleme.databinding.ActivityForgotPasswordBinding
 import com.example.matuleme.databinding.ActivityNewPasswordBinding
 import com.example.matuleme.fragments.FragmentCheckEmail
-import com.example.matuleme.objects.General.isEmailValid
 import com.example.matuleme.objects.Requests
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import kotlin.random.Random
+
 
 class NewPassword : AppCompatActivity() {
     private lateinit var binding: ActivityNewPasswordBinding
@@ -35,7 +31,7 @@ class NewPassword : AppCompatActivity() {
         with(binding){
             btnGenerate.setOnClickListener {
                 if(inptPhraze.text.length >= 8) {
-                    generatePass(inptPhraze.text.toString())
+                    generatePassword(inptPhraze.text.toString())
                 } else {
                     Toast.makeText(this@NewPassword, "Фраза слишком короткая", Toast.LENGTH_SHORT).show()
                 }
@@ -45,57 +41,64 @@ class NewPassword : AppCompatActivity() {
                 finish()
             }
             btnNewPass.setOnClickListener {
+                val clipboard: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("", inptPassword.getText().toString())
+                clipboard.setPrimaryClip(clip)
                 sendRequest()
             }
         }
     }
 
-    private fun rand(str1: String, str2: String): String {
-        val rand = Random.nextBoolean()
-        return if (rand) str1
-        else str2
-    }
-
-    private fun generatePass(str: String): String {
+    fun generatePassword(phrase: String){
         var newStr = ""
-        str.forEach { c ->
-            newStr += when(c) {
-                'а' -> rand("4", "f")
-                'б' -> rand("6", rand("B", "b"))
-                'в' -> rand("4", "f")
-                'г' -> rand("4", "f")
-                'д' -> rand("4", "f")
-                'е' -> rand("4", "f")
-                'ё' -> rand("4", "f")
-                'ж' -> rand("4", "f")
-                'з' -> rand("4", "f")
-                'и' -> rand("1", rand("i", "I"))
-                'й' -> rand("4", "f")
-                'к' -> rand("4", "f")
-                'л' -> rand("4", "f")
-                'м' -> rand("4", "f")
-                'о' -> rand("0", rand("()", "O"))
-                'п' -> rand("4", "f")
-                'р' -> rand("4", "f")
-                'с' -> rand("(", "C")
-                'т' -> rand("4", "f")
-                'у' -> rand("4", "f")
-                'ф' -> rand("4", "f")
-                'х' -> rand("4", "f")
-                'ц' -> rand("4", "f")
-                'ч' -> rand("4", "f")
-                'ш' -> rand("4", "f")
-                'щ' -> rand("4", "f")
-                'ь' -> rand("4", "f")
-                'ы' -> rand("4", "f")
-                'ъ' -> rand("4", "f")
-                'э' -> rand("4", "f")
-                'ю' -> rand("4", "f")
-                'я' -> rand("4", "f")
-                else -> {}
+        phrase.forEach { c ->
+            newStr += when(c.toLowerCase()) {
+                'а' -> "@"
+                'б' -> "6"
+                'в' -> "|3"
+                'г' -> getRand("r", "G")
+                'д' -> getRand("d", "D")
+                'е' -> getRand("e", "E")
+                'ё' -> "3`"
+                'ж' -> getRand("#", "Zh")
+                'з' -> "3"
+                'и' -> "1"
+                'й' -> "1`"
+                'к' -> getRand("1<", getRand("k", "K"))
+                'л' -> getRand("l", "L")
+                'м' -> getRand("m", "M")
+                'н' -> getRand("|-|","H")
+                'о' -> "0"
+                'п' -> "n"
+                'р' -> getRand("|O", "P")
+                'с' -> getRand("c", "C")
+                'т' -> getRand("t", "T")
+                'у' -> getRand("y", "Y")
+                'ф' -> getRand("<|>", "pH")
+                'х' -> getRand("><", getRand("x", "X"))
+                'ц' -> getRand("u,", "U,")
+                'ч' -> getRand("4", "Ch")
+                'ш' -> getRand("w", "W")
+                'щ' -> getRand("w,", "W,")
+                'ь' -> "b"
+                'ы' -> "6|"
+                'ъ' -> "^6"
+                'э' -> "3"
+                'ю' -> "|-0"
+                'я' -> "9|"
+                else -> c
             }
         }
-        return newStr
+        val regex = Regex("(?=.*[A-ZА-Я])(?=.*[a-zа-я])(?=.*\\d)(?=.*\\s)(?=.*\\p{Punct}).+")
+        val rez = regex.containsMatchIn(newStr)
+        if (rez) binding.inptPassword.setText(newStr)
+        else Toast.makeText(this@NewPassword, "Фраза не подходит", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun getRand(s1: String, s2: String): String {
+        val rand = Random.nextBoolean()
+        return if (rand) s1
+        else s2
     }
 
     private fun sendRequest() {
@@ -103,14 +106,13 @@ class NewPassword : AppCompatActivity() {
             password = inptPassword.text.toString()
             CoroutineScope(Dispatchers.Main).launch {
                 try {
-                    Requests.sendOtp(email)
+                    Requests.updatePass(password)
                     runOnUiThread {
-                        val frg = FragmentCheckEmail()
-                        frg.show(supportFragmentManager, "send otp")
+                        startActivity(Intent(this@NewPassword, SignIn::class.java))
                     }
                 } catch (e: Exception) {
-                    Toast.makeText(this@ForgotPassword, e.message.toString(), Toast.LENGTH_SHORT).show()
-                    Log.d("error send otp", e.message.toString())
+                    Toast.makeText(this@NewPassword, e.message.toString(), Toast.LENGTH_SHORT).show()
+                    Log.d("error update pass", e.message.toString())
                 }
             }
         }

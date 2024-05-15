@@ -127,7 +127,7 @@ class OTPVerification : AppCompatActivity() {
                 try {
                     Requests.checkToken("nesklmnvan@gmail.com", token)
                     runOnUiThread {
-                        startActivity(Intent(this@OTPVerification, SignIn::class.java))
+                        startActivity(Intent(this@OTPVerification, NewPassword::class.java))
                         finish()
                     }
                 } catch (e: Exception) {

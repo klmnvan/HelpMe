@@ -4,6 +4,7 @@ import io.github.jan.supabase.gotrue.OtpType
 import io.github.jan.supabase.gotrue.auth
 import io.github.jan.supabase.gotrue.providers.builtin.Email
 import io.github.jan.supabase.gotrue.providers.builtin.OTP
+import io.github.jan.supabase.postgrest.from
 
 object Requests {
 
@@ -33,6 +34,12 @@ object Requests {
             type = OtpType.Email.MAGIC_LINK,
             email = emailUser,
             token = tokenUser)
+    }
+
+    suspend fun updatePass(newPass: String) {
+        Client.supabase.auth.modifyUser(true) {
+            password = newPass
+        }
     }
 
 
