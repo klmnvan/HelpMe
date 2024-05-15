@@ -54,4 +54,6 @@ dependencies {
     implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation ("io.github.pilgr:paperdb:2.7.2")
+    implementation ("com.google.zxing:core:3.4.1")
+    implementation ("com.journeyapps:zxing-android-embedded:4.0.0")
 }

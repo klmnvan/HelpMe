@@ -58,6 +58,24 @@
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/img_user2"/>
 
+            <LinearLayout
+                android:id="@+id/LLForCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextHint1"
+                    android:text="Открыть"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
             <TextView
                 style="@style/TextHint1"
                 android:layout_below="@id/tDesc"

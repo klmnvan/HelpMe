@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ProfileModel (
-    var id: String? = "",
+    var id: String? = "96c3c2f1-3d52-4e2d-bf90-aad8a4d93556",
     var name: String? = "",
     var surname: String? = "",
     var address: String? = "",
