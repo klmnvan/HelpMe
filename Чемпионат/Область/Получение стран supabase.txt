@@ -1,0 +1,24 @@
+/*  fun getData(){
+        CoroutineScope(Dispatchers.IO).launch {
+            withContext(Dispatchers.IO) {
+                val response = supabase
+                    .from("countries")
+                    .select()
+                    .decodeList<CountryModel>()
+                runOnUiThread {
+                    (Toast.makeText(this@LogIn, response.toString(), Toast.LENGTH_LONG).show())
+                }
+            }
+        }
+        *//*CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = supabase
+                    .from("countries")
+                    .select()
+                    .decodeList<CountryModel>()
+                runOnUiThread { (Toast.makeText(this@LogIn, response.toString(), Toast.LENGTH_LONG).show()) }
+            } catch (e: Exception) {
+                Log.d(ContentValues.TAG, e.toString())
+            }
+        }*//*
+    }*/
