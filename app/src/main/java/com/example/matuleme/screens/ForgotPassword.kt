@@ -5,13 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.matuleme.R
-import com.example.matuleme.customActivity.CustomActivity
-import com.example.matuleme.databinding.ActivityOnBoardBinding
+import com.example.matuleme.databinding.ActivityForgotPasswordBinding
 import com.example.matuleme.databinding.ActivitySignInBinding
 import com.example.matuleme.fragments.FragmentCheckEmail
 import com.example.matuleme.objects.General.isEmailValid
@@ -22,24 +20,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class SignIn : CustomActivity() {
-    private lateinit var binding: ActivitySignInBinding
+class ForgotPassword : AppCompatActivity() {
+    private lateinit var binding: ActivityForgotPasswordBinding
     private var email = ""
-    private var password = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater)
+        binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
         pressBtns()
     }
 
     private fun pressBtns(){
         with(binding){
-            btnSignIn.setOnClickListener {
+            btnSend.setOnClickListener {
                 val email = inptEmail.text.toString()
                 if(!email.isEmailValid()) {
-                    Toast.makeText(this@SignIn, "Email не валиден", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ForgotPassword, "Email не валиден", Toast.LENGTH_SHORT).show()
                 } else {
                     sendRequest()
                     /*val dialog = FragmentCheckEmail()
@@ -50,12 +47,8 @@ class SignIn : CustomActivity() {
                     finish()*/
                 }
             }
-            btnSignOut.setOnClickListener {
-                startActivity(Intent(this@SignIn, SignOut::class.java))
-                finish()
-            }
-            btnReset.setOnClickListener {
-                startActivity(Intent(this@SignIn, ForgotPassword::class.java))
+            btnBack.setOnClickListener {
+                startActivity(Intent(this@ForgotPassword, SignIn::class.java))
                 finish()
             }
         }
@@ -64,22 +57,18 @@ class SignIn : CustomActivity() {
     private fun sendRequest() {
         with(binding){
             email = inptEmail.text.toString()
-            password = inptPassword.text.toString()
-            Toast.makeText(this@SignIn, "Попытка входа", Toast.LENGTH_SHORT).show()
             CoroutineScope(Dispatchers.Main).launch {
                 try {
-                    Requests.signIn(email, password)
+                    Requests.sendOtp(email)
                     runOnUiThread {
-                        PrefManager.act = 2
-                        startActivity(Intent(this@SignIn, Home::class.java))
-                        finish()
+                        val frg = FragmentCheckEmail()
+                        frg.show(supportFragmentManager, "send otp")
                     }
                 } catch (e: Exception) {
-                    Toast.makeText(this@SignIn, e.message.toString(), Toast.LENGTH_SHORT).show()
-                    Log.d("error sign in", e.message.toString())
+                    Toast.makeText(this@ForgotPassword, e.message.toString(), Toast.LENGTH_SHORT).show()
+                    Log.d("error send otp", e.message.toString())
                 }
             }
         }
     }
-
 }

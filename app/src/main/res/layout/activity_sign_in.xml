@@ -171,6 +171,7 @@
             android:text="Вы впервые? "/>
 
         <TextView
+            android:id="@+id/btnSignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?attr/colorOnPrimary"

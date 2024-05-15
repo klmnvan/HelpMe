@@ -51,9 +51,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation ("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-    implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation ("io.github.pilgr:paperdb:2.7.2")
     implementation ("com.google.zxing:core:3.4.1")
     implementation ("com.journeyapps:zxing-android-embedded:4.0.0")
+
+    val supabase_version = "2.0.4"
+    val ktor_version = "2.3.9"
+    implementation(platform("io.github.jan-tennert.supabase:bom:$supabase_version"))
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.github.jan-tennert.supabase:gotrue-kt")
+    implementation("io.ktor:ktor-client-android:$ktor_version")
+
 }

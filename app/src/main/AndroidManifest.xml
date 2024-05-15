@@ -17,6 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".screens.NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".screens.OTPVerification"
+            android:exported="false" />
+        <activity
+            android:name=".screens.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".screens.SignOut"
+            android:exported="false" />
+        <activity
             android:name=".screens.Orders"
             android:exported="false" />
         <activity

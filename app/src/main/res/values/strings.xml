@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MatuleMe</string>
+    <string name="open_pdf"><u>Даю согласие на обработку персональных данных</u></string>
 </resources>

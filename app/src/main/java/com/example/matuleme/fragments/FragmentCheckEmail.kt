@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import com.example.matuleme.R
 import com.example.matuleme.screens.Home
+import com.example.matuleme.screens.OTPVerification
 
 class FragmentCheckEmail: DialogFragment() {
 
@@ -21,7 +22,7 @@ class FragmentCheckEmail: DialogFragment() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        startActivity(Intent(activity, Home::class.java))
+        startActivity(Intent(activity, OTPVerification::class.java))
         requireActivity().finish()
     }
 
